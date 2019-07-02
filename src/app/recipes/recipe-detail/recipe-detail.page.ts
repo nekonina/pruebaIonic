@@ -33,7 +33,7 @@ export class RecipeDetailPage implements OnInit {
   }
 
   onDeleteRecipe() {
-    this.alertCtrl.create({header: 'Cuidado', message:'Desea eliminar este elemento?', buttons: [
+    this.alertCtrl.create({header: 'Cuidado', message: 'Desea eliminar este elemento?', buttons: [
       {text: 'okay', handler: () => {
         this.recipesService.deleteRecipe(this.loadedRecipe.id);
         this.router.navigate(['/recipes']);
