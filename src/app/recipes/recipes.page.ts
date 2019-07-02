@@ -14,7 +14,7 @@ export class RecipesPage implements OnInit {
   constructor(private recipesService: RecipesService) { }
 
   ngOnInit() {
+      console.log("passando");
       this.recipes = this.recipesService.getAllRecipes();
-  }
-
+  } 
 }

@@ -7,10 +7,10 @@ import {Recipe} from './recipes.model';
 
 export class RecipesService {
 
-  private recipes : Recipe[] = [
+  private recipes: Recipe[] = [
   {
-    id:'r1',
-    title:'tequeno',
+    id: 'r1',
+    title: 'tequeno',
     imageUrl: 'https://locosxlagastronomia.com/wp-content/uploads/2017/12/Tequenos-frenteG.jpg',
     ingredients: ['harina','queso','aceite']
   },
@@ -25,14 +25,20 @@ export class RecipesService {
 
   constructor() { }
 
-  getAllRecipes(){
-    return[...this.recipes]
+  getAllRecipes() {
+    return[...this.recipes];
   }
 
-  getRecipe(recipeId: string){
+  getRecipe(recipeId: string) {
     return {...this.recipes.find(recipe => {
       return recipe.id === recipeId;
     })};
   }
 
+
+  deleteRecipe(recipeId: string) {
+     this.recipes = this.recipes.filter(recipe => {
+       return recipe.id !== recipeId;
+     });
+  }
 }
